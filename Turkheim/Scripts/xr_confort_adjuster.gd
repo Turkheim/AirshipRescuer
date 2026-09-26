@@ -1,12 +1,14 @@
-class_name XRComfortAdjuster
 extends Node3D
-
 ## Drop this node as a DIRECT CHILD of an XROrigin3D.
 ##
 ## Controls (left/right Touch controller convention):
-##   Left X + right stick -> move origin front/back and left/right
-##   Left Y + right stick -> move origin up/down, hard left/right = snap turn
-##   Both thumbstick clicks -> reloads the current scene
+##   Left X button (horizontal_move_button) held + right stick -> move front/back + left/right
+##   Left Y button (vertical_move_button) held + right stick   -> move up/down, hard left/right = snap turn
+##
+## No scene-reload / reset logic lives here on purpose. If you want a reset
+## button, listen for `reset_requested` from a separate manager node and
+## decide there how to handle it (debounced, deferred, etc.) rather than
+## calling get_tree().reload_current_scene() directly from an input-polling node.
 ##
 ## If left_controller_path / right_controller_path are left empty, it will
 ## try to find them automatically among the XROrigin3D's children by their
@@ -26,7 +28,9 @@ extends Node3D
 @export_group("Input Bindings")
 @export var horizontal_move_button := "ax_button"   # X on left controller -> front/back + left/right
 @export var vertical_move_button := "by_button"     # Y on left controller -> up/down + snap turn
-@export var reset_button := "primary_click"         # thumbstick click, both hands
+@export var reset_button := "primary_click"         # thumbstick click, both hands -> signal only
+
+signal reset_requested
 
 var xr_origin: XROrigin3D
 var left_controller: XRController3D
@@ -39,17 +43,19 @@ var _snap_turn_ready := true
 func _ready() -> void:
 	xr_origin = get_parent() as XROrigin3D
 	if not xr_origin:
-		push_warning("XRComfortAdjuster expects to be a direct child of an XROrigin3D.")
+		push_warning("XRComfortAdjuster must be a direct child of an XROrigin3D.")
+		set_physics_process(false)
 		return
 
-	left_controller = get_node_or_null(left_controller_path)
-	right_controller = get_node_or_null(right_controller_path)
+	left_controller = get_node_or_null(left_controller_path) as XRController3D
+	right_controller = get_node_or_null(right_controller_path) as XRController3D
 
 	if not left_controller or not right_controller:
 		_auto_detect_controllers()
 
 	if not left_controller or not right_controller:
 		push_warning("XRComfortAdjuster: couldn't find both controllers. Set left_controller_path / right_controller_path explicitly.")
+		set_physics_process(false)
 
 
 func _auto_detect_controllers() -> void:
@@ -62,18 +68,16 @@ func _auto_detect_controllers() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if not (left_controller and right_controller and xr_origin):
-		return
-	_handle_reset()
+	_handle_reset_signal()
 	_handle_adjustment(delta)
 
 
-func _handle_reset() -> void:
+func _handle_reset_signal() -> void:
 	var both_pressed := left_controller.is_button_pressed(reset_button) \
 		and right_controller.is_button_pressed(reset_button)
 
 	if both_pressed and not _reset_held_last_frame:
-		get_tree().reload_current_scene()
+		reset_requested.emit()
 
 	_reset_held_last_frame = both_pressed
 

@@ -1,0 +1,882 @@
+[gd_scene format=3 uid="uid://cv0c6i0omqkvp"]
+
+[ext_resource type="Shader" uid="uid://dx2jmcmpnpd5h" path="res://Turkheim/Scripts/VRRiverShader.tres" id="1_0xus8"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_dkokf"]
+size = Vector2(50, 50)
+subdivide_width = 100
+subdivide_depth = 100
+orientation = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p34dg"]
+render_priority = 0
+shader = ExtResource("1_0xus8")
+shader_parameter/ColorParameter = Color(0.1586, 0.26, 0.23802999, 1)
+shader_parameter/ColorParameter2 = Color(0.000239, 0.161937, 0.568281, 1)
+
+[node name="SeaTiles" type="Node3D" unique_id=1538150692]
+metadata/_edit_group_ = true
+
+[node name="Ocean" type="MeshInstance3D" parent="." unique_id=1974619896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean2" type="MeshInstance3D" parent="." unique_id=764943761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean3" type="MeshInstance3D" parent="." unique_id=526431756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean4" type="MeshInstance3D" parent="." unique_id=750710532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean5" type="MeshInstance3D" parent="." unique_id=1577928851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean6" type="MeshInstance3D" parent="." unique_id=1623596044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean7" type="MeshInstance3D" parent="." unique_id=90055194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean8" type="MeshInstance3D" parent="." unique_id=484224323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean9" type="MeshInstance3D" parent="." unique_id=2086338020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean10" type="MeshInstance3D" parent="." unique_id=847517409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean11" type="MeshInstance3D" parent="." unique_id=317627667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean12" type="MeshInstance3D" parent="." unique_id=1450928628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean13" type="MeshInstance3D" parent="." unique_id=2063357236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean14" type="MeshInstance3D" parent="." unique_id=1412118955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean15" type="MeshInstance3D" parent="." unique_id=811227757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean16" type="MeshInstance3D" parent="." unique_id=169929262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean25" type="MeshInstance3D" parent="." unique_id=1383025227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean26" type="MeshInstance3D" parent="." unique_id=1759187945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean27" type="MeshInstance3D" parent="." unique_id=1809559340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean28" type="MeshInstance3D" parent="." unique_id=487924898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean29" type="MeshInstance3D" parent="." unique_id=861099067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean30" type="MeshInstance3D" parent="." unique_id=1907635189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean31" type="MeshInstance3D" parent="." unique_id=654415492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean32" type="MeshInstance3D" parent="." unique_id=1969871862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean37" type="MeshInstance3D" parent="." unique_id=717877124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean38" type="MeshInstance3D" parent="." unique_id=1463634319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean39" type="MeshInstance3D" parent="." unique_id=798051152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean40" type="MeshInstance3D" parent="." unique_id=1146061645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean45" type="MeshInstance3D" parent="." unique_id=1787258032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean46" type="MeshInstance3D" parent="." unique_id=826127979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean47" type="MeshInstance3D" parent="." unique_id=1983519550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean48" type="MeshInstance3D" parent="." unique_id=914081116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean61" type="MeshInstance3D" parent="." unique_id=1749085497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean62" type="MeshInstance3D" parent="." unique_id=1045427036]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean63" type="MeshInstance3D" parent="." unique_id=611821204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean64" type="MeshInstance3D" parent="." unique_id=1723667334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean17" type="MeshInstance3D" parent="." unique_id=324335877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean18" type="MeshInstance3D" parent="." unique_id=342938105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean19" type="MeshInstance3D" parent="." unique_id=1896318201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean20" type="MeshInstance3D" parent="." unique_id=426760461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean21" type="MeshInstance3D" parent="." unique_id=1476116220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean22" type="MeshInstance3D" parent="." unique_id=728234975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean23" type="MeshInstance3D" parent="." unique_id=1808362652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean24" type="MeshInstance3D" parent="." unique_id=820367869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean33" type="MeshInstance3D" parent="." unique_id=311084966]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean34" type="MeshInstance3D" parent="." unique_id=246419787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean35" type="MeshInstance3D" parent="." unique_id=1634790867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean36" type="MeshInstance3D" parent="." unique_id=1949981460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean41" type="MeshInstance3D" parent="." unique_id=459911285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean42" type="MeshInstance3D" parent="." unique_id=148015241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean43" type="MeshInstance3D" parent="." unique_id=1893173733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean44" type="MeshInstance3D" parent="." unique_id=840312989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean49" type="MeshInstance3D" parent="." unique_id=1824920592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean50" type="MeshInstance3D" parent="." unique_id=810791677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean51" type="MeshInstance3D" parent="." unique_id=184879344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean52" type="MeshInstance3D" parent="." unique_id=690639992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean53" type="MeshInstance3D" parent="." unique_id=1781445447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean54" type="MeshInstance3D" parent="." unique_id=72733770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean55" type="MeshInstance3D" parent="." unique_id=1157932106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean56" type="MeshInstance3D" parent="." unique_id=1619225539]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean57" type="MeshInstance3D" parent="." unique_id=1552063892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean58" type="MeshInstance3D" parent="." unique_id=234584625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean59" type="MeshInstance3D" parent="." unique_id=2052512489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean60" type="MeshInstance3D" parent="." unique_id=718207944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean65" type="MeshInstance3D" parent="." unique_id=864142577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean66" type="MeshInstance3D" parent="." unique_id=1728654986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean67" type="MeshInstance3D" parent="." unique_id=598816787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean68" type="MeshInstance3D" parent="." unique_id=541667139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean69" type="MeshInstance3D" parent="." unique_id=1664077426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean70" type="MeshInstance3D" parent="." unique_id=559434916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean71" type="MeshInstance3D" parent="." unique_id=2108871969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean72" type="MeshInstance3D" parent="." unique_id=683251560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean73" type="MeshInstance3D" parent="." unique_id=1572163692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean74" type="MeshInstance3D" parent="." unique_id=1378375912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean75" type="MeshInstance3D" parent="." unique_id=162156609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean76" type="MeshInstance3D" parent="." unique_id=689691020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean77" type="MeshInstance3D" parent="." unique_id=1694634496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean78" type="MeshInstance3D" parent="." unique_id=1412146136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean79" type="MeshInstance3D" parent="." unique_id=505434574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean80" type="MeshInstance3D" parent="." unique_id=472994207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean81" type="MeshInstance3D" parent="." unique_id=2111102340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean82" type="MeshInstance3D" parent="." unique_id=165409942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean83" type="MeshInstance3D" parent="." unique_id=1453702587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean84" type="MeshInstance3D" parent="." unique_id=843043695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean85" type="MeshInstance3D" parent="." unique_id=1465697525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean86" type="MeshInstance3D" parent="." unique_id=1125691014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean87" type="MeshInstance3D" parent="." unique_id=1991347096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean88" type="MeshInstance3D" parent="." unique_id=889646615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean89" type="MeshInstance3D" parent="." unique_id=85937281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean90" type="MeshInstance3D" parent="." unique_id=445837050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean91" type="MeshInstance3D" parent="." unique_id=1736947129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean92" type="MeshInstance3D" parent="." unique_id=1526611585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean93" type="MeshInstance3D" parent="." unique_id=1037933422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean94" type="MeshInstance3D" parent="." unique_id=584956553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean95" type="MeshInstance3D" parent="." unique_id=169619087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean96" type="MeshInstance3D" parent="." unique_id=2120441269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean97" type="MeshInstance3D" parent="." unique_id=952892070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean98" type="MeshInstance3D" parent="." unique_id=1132004483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean99" type="MeshInstance3D" parent="." unique_id=2016960806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean100" type="MeshInstance3D" parent="." unique_id=490610765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean101" type="MeshInstance3D" parent="." unique_id=2032123566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean102" type="MeshInstance3D" parent="." unique_id=988211673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean103" type="MeshInstance3D" parent="." unique_id=966871438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean104" type="MeshInstance3D" parent="." unique_id=608561768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean105" type="MeshInstance3D" parent="." unique_id=1422907882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean106" type="MeshInstance3D" parent="." unique_id=711581799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean107" type="MeshInstance3D" parent="." unique_id=2086414653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean108" type="MeshInstance3D" parent="." unique_id=2018568315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 275, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean109" type="MeshInstance3D" parent="." unique_id=536753143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean110" type="MeshInstance3D" parent="." unique_id=1137061976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean111" type="MeshInstance3D" parent="." unique_id=1544689240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean112" type="MeshInstance3D" parent="." unique_id=1075509844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean113" type="MeshInstance3D" parent="." unique_id=1261083097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean114" type="MeshInstance3D" parent="." unique_id=1374848291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean115" type="MeshInstance3D" parent="." unique_id=1256894300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean116" type="MeshInstance3D" parent="." unique_id=647357167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean117" type="MeshInstance3D" parent="." unique_id=109884152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean118" type="MeshInstance3D" parent="." unique_id=1869128704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean119" type="MeshInstance3D" parent="." unique_id=1851583354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean120" type="MeshInstance3D" parent="." unique_id=560547359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean121" type="MeshInstance3D" parent="." unique_id=87822944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean122" type="MeshInstance3D" parent="." unique_id=617744277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean123" type="MeshInstance3D" parent="." unique_id=1325515480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean124" type="MeshInstance3D" parent="." unique_id=1665207241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean125" type="MeshInstance3D" parent="." unique_id=514574514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean126" type="MeshInstance3D" parent="." unique_id=1338167475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean127" type="MeshInstance3D" parent="." unique_id=1075110201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean128" type="MeshInstance3D" parent="." unique_id=833207503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean129" type="MeshInstance3D" parent="." unique_id=675852883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean130" type="MeshInstance3D" parent="." unique_id=1145543427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean131" type="MeshInstance3D" parent="." unique_id=432777973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -275, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean132" type="MeshInstance3D" parent="." unique_id=1881356838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean133" type="MeshInstance3D" parent="." unique_id=777239193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean134" type="MeshInstance3D" parent="." unique_id=1760272430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -175)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean135" type="MeshInstance3D" parent="." unique_id=1280065532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean136" type="MeshInstance3D" parent="." unique_id=165086532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -125)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean137" type="MeshInstance3D" parent="." unique_id=1261961492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean138" type="MeshInstance3D" parent="." unique_id=491460546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -275)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean139" type="MeshInstance3D" parent="." unique_id=57779270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean140" type="MeshInstance3D" parent="." unique_id=268993627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -225)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean141" type="MeshInstance3D" parent="." unique_id=816396169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean142" type="MeshInstance3D" parent="." unique_id=2029762035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -75)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean143" type="MeshInstance3D" parent="." unique_id=1733599092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
+
+[node name="Ocean144" type="MeshInstance3D" parent="." unique_id=287181698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -25)
+mesh = SubResource("QuadMesh_dkokf")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_p34dg")
