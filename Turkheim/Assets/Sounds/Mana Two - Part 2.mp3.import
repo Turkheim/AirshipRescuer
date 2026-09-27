@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb2kdx0ibu585"
+path="res://.godot/imported/Mana Two - Part 2.mp3-01577fc8aaa7b084b85791e99120ac03.mp3str"
+
+[deps]
+
+source_file="res://Turkheim/Assets/Sounds/Mana Two - Part 2.mp3"
+dest_files=["res://.godot/imported/Mana Two - Part 2.mp3-01577fc8aaa7b084b85791e99120ac03.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

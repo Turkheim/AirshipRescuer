@@ -16,10 +16,11 @@ colors = PackedColorArray(0, 0, 0, 1, 0.75819063, 0.7581923, 0.75819093, 1)
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_8duwl"]
 noise_type = 2
 frequency = 0.14
-fractal_type = 0
+fractal_octaves = 3
+fractal_lacunarity = 1.325
+fractal_gain = 1.085
 cellular_distance_function = 1
 domain_warp_enabled = true
-domain_warp_amplitude = -5.005
 domain_warp_fractal_octaves = 1
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5ykiu"]
@@ -192,7 +193,7 @@ nodes/vertex/11/position = Vector2(-300, 660)
 nodes/vertex/12/node = SubResource("VisualShaderNodeMultiplyAdd_eoys7")
 nodes/vertex/12/position = Vector2(80, 280)
 nodes/vertex/13/node = SubResource("VisualShaderNodeTexture_p27le")
-nodes/vertex/13/position = Vector2(-1080, 700)
+nodes/vertex/13/position = Vector2(-1120, 660)
 nodes/vertex/14/node = SubResource("VisualShaderNodeVectorOp_lj8ox")
 nodes/vertex/14/position = Vector2(-840, 820)
 nodes/vertex/15/node = SubResource("VisualShaderNodeFloatOp_68lae")

@@ -11,19 +11,20 @@ default_input_values = [0, 0.0, 1, 0.69]
 operator = 5
 
 [sub_resource type="Gradient" id="Gradient_eqwsv"]
-colors = PackedColorArray(0, 0, 0, 1, 0.75819063, 0.7581923, 0.75819093, 1)
+offsets = PackedFloat32Array(0, 0.63793105, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.29194698, 0.2919476, 0.2919471, 1, 1, 1, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_8duwl"]
 noise_type = 2
 frequency = 0.05
-fractal_type = 0
+fractal_lacunarity = 1.47
+fractal_gain = 0.61
 cellular_distance_function = 1
 domain_warp_enabled = true
-domain_warp_amplitude = -5.005
+domain_warp_amplitude = 5.965
 domain_warp_fractal_octaves = 1
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5ykiu"]
-width = 1024
 noise = SubResource("FastNoiseLite_8duwl")
 color_ramp = SubResource("Gradient_eqwsv")
 seamless = true
@@ -83,6 +84,10 @@ parameter_name = "ColorParameter2"
 default_value_enabled = true
 default_value = Color(0.00023906544, 0.16193742, 0.5682805, 1)
 
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_xq7x4"]
+default_input_values = [0, 0.0, 1, 40.0]
+operator = 4
+
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_e107i"]
 output_port_for_preview = 0
 texture = SubResource("NoiseTexture2D_5ykiu")
@@ -93,13 +98,13 @@ default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
 op_type = 2
 
 [sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_3fiii"]
-default_input_values = [1, Vector2(0.02, 0), 2, Vector2(0, 0)]
+default_input_values = [1, Vector2(0.025, 0), 2, Vector2(0, 0)]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_0cich"]
 input_name = "time"
 
 [sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_i3jro"]
-default_input_values = [1, Vector2(0, 0.01), 2, Vector2(0, 0)]
+default_input_values = [1, Vector2(0, 0.025), 2, Vector2(0, 0)]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_qwx5r"]
 input_name = "vertex"
@@ -121,7 +126,7 @@ op_type = 2
 operator = 2
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_68lae"]
-default_input_values = [0, 0.0, 1, 0.5]
+default_input_values = [0, 0.0, 1, 3.0]
 operator = 2
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_jh0ii"]
@@ -129,13 +134,17 @@ output_port_for_preview = 0
 texture = SubResource("NoiseTexture2D_5ykiu")
 
 [sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_p55xn"]
-default_input_values = [1, Vector2(0, 0.01), 2, Vector2(0, 0)]
-
-[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_kxd74"]
-input_name = "time"
+default_input_values = [1, Vector2(0, 0.025), 2, Vector2(0, 0)]
 
 [sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_hosik"]
-default_input_values = [1, Vector2(0.02, 0), 2, Vector2(0, 0)]
+default_input_values = [1, Vector2(0.025, 0), 2, Vector2(0, 0)]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_sp44c"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_tr2c8"]
+default_input_values = [0, 0.0, 1, 40.0]
+operator = 4
 
 [resource]
 nodes/vertex/10/node = SubResource("VisualShaderNodeInput_qwx5r")
@@ -154,11 +163,13 @@ nodes/vertex/16/node = SubResource("VisualShaderNodeTexture_jh0ii")
 nodes/vertex/16/position = Vector2(-1100, 1160)
 nodes/vertex/17/node = SubResource("VisualShaderNodeUVFunc_p55xn")
 nodes/vertex/17/position = Vector2(-1460, 1220)
-nodes/vertex/18/node = SubResource("VisualShaderNodeInput_kxd74")
-nodes/vertex/18/position = Vector2(-1860, 960)
 nodes/vertex/19/node = SubResource("VisualShaderNodeUVFunc_hosik")
 nodes/vertex/19/position = Vector2(-1460, 720)
-nodes/vertex/connections = PackedInt32Array(11, 0, 12, 1, 10, 0, 12, 2, 12, 0, 0, 0, 13, 0, 14, 1, 14, 0, 15, 0, 19, 0, 13, 0, 16, 0, 14, 0, 17, 0, 16, 0, 18, 0, 17, 2, 18, 0, 19, 2, 15, 0, 12, 0)
+nodes/vertex/20/node = SubResource("VisualShaderNodeInput_sp44c")
+nodes/vertex/20/position = Vector2(-2180.3528, 871.44165)
+nodes/vertex/21/node = SubResource("VisualShaderNodeFloatOp_tr2c8")
+nodes/vertex/21/position = Vector2(-1780.3528, 1031.4417)
+nodes/vertex/connections = PackedInt32Array(11, 0, 12, 1, 10, 0, 12, 2, 12, 0, 0, 0, 13, 0, 14, 1, 14, 0, 15, 0, 19, 0, 13, 0, 16, 0, 14, 0, 17, 0, 16, 0, 15, 0, 12, 0, 20, 0, 21, 0, 21, 0, 19, 2, 21, 0, 17, 2)
 nodes/fragment/0/position = Vector2(2240, 620)
 nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_lw5ib")
 nodes/fragment/2/position = Vector2(-300, 540)
@@ -169,7 +180,7 @@ nodes/fragment/4/position = Vector2(500, 500)
 nodes/fragment/5/node = SubResource("VisualShaderNodeUVFunc_3fiii")
 nodes/fragment/5/position = Vector2(-1091.9562, 757.3187)
 nodes/fragment/6/node = SubResource("VisualShaderNodeInput_0cich")
-nodes/fragment/6/position = Vector2(-1500, 1000)
+nodes/fragment/6/position = Vector2(-2180, 1120)
 nodes/fragment/9/node = SubResource("VisualShaderNodeUVFunc_i3jro")
 nodes/fragment/9/position = Vector2(-1100, 1260)
 nodes/fragment/10/node = SubResource("VisualShaderNodeVectorOp_lw5ib")
@@ -204,4 +215,6 @@ nodes/fragment/27/node = SubResource("VisualShaderNodeMix_sp44c")
 nodes/fragment/27/position = Vector2(1566.2384, 419.20633)
 nodes/fragment/28/node = SubResource("VisualShaderNodeColorParameter_tr2c8")
 nodes/fragment/28/position = Vector2(960, 260)
-nodes/fragment/connections = PackedInt32Array(2, 0, 4, 0, 3, 0, 10, 1, 10, 0, 11, 0, 11, 0, 4, 1, 5, 0, 3, 0, 12, 0, 10, 0, 9, 0, 12, 0, 6, 0, 9, 2, 6, 0, 5, 2, 16, 0, 21, 0, 17, 0, 22, 0, 20, 0, 0, 9, 23, 0, 20, 0, 24, 0, 23, 1, 25, 0, 20, 1, 24, 0, 25, 1, 21, 0, 23, 0, 22, 0, 25, 0, 13, 0, 0, 1, 10, 1, 16, 0, 10, 2, 17, 0, 26, 0, 27, 2, 4, 0, 27, 0, 28, 0, 27, 1, 27, 0, 0, 0, 14, 0, 0, 3)
+nodes/fragment/29/node = SubResource("VisualShaderNodeFloatOp_xq7x4")
+nodes/fragment/29/position = Vector2(-1780, 1280)
+nodes/fragment/connections = PackedInt32Array(2, 0, 4, 0, 3, 0, 10, 1, 10, 0, 11, 0, 11, 0, 4, 1, 5, 0, 3, 0, 12, 0, 10, 0, 9, 0, 12, 0, 16, 0, 21, 0, 17, 0, 22, 0, 20, 0, 0, 9, 23, 0, 20, 0, 24, 0, 23, 1, 25, 0, 20, 1, 24, 0, 25, 1, 21, 0, 23, 0, 22, 0, 25, 0, 13, 0, 0, 1, 10, 1, 16, 0, 10, 2, 17, 0, 26, 0, 27, 2, 4, 0, 27, 0, 28, 0, 27, 1, 27, 0, 0, 0, 14, 0, 0, 3, 6, 0, 29, 0, 29, 0, 9, 2, 29, 0, 5, 2)

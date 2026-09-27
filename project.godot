@@ -85,7 +85,8 @@ trigger_left={
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
-limits/time/time_rollover_secs=30.0
+limits/time/time_rollover_secs=40.0
+anti_aliasing/quality/msaa_3d=2
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 
 [xr]

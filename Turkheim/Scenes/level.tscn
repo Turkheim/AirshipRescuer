@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cdbmlufck5ldl"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_2katk"]
+[ext_resource type="Script" uid="uid://c51hfwpwvx2k5" path="res://Turkheim/Scenes/level.gd" id="1_alfwd"]
 [ext_resource type="PackedScene" uid="uid://cv0c6i0omqkvp" path="res://Turkheim/Scenes/sea_tiles.tscn" id="2_d06sr"]
 [ext_resource type="Script" uid="uid://cloxfr8r3b00u" path="res://addons/godot-xr-tools/interactables/interactable_slider.gd" id="2_p34dg"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_x6ibt"]
@@ -22,13 +23,19 @@
 [ext_resource type="Texture2D" uid="uid://brfdq4hwymeft" path="res://Turkheim/Assets/Textures/Ground003Normal.png" id="8_u47gj"]
 [ext_resource type="PackedScene" uid="uid://ca3daqmpo0tua" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_redirect.tscn" id="9_rdo44"]
 [ext_resource type="Script" uid="uid://c8gx2wc7hsxf5" path="res://addons/godot-xr-tools/interactables/interactable_hinge.gd" id="10_am666"]
+[ext_resource type="AudioStream" uid="uid://dogb2kq52nkyg" path="res://Turkheim/Assets/Sounds/Burner.wav" id="15_u47gj"]
+[ext_resource type="AudioStream" uid="uid://dnb4161ogojqv" path="res://Turkheim/Assets/Sounds/Props.wav" id="18_alfwd"]
 [ext_resource type="Material" uid="uid://dgfqe18vunyyy" path="res://Turkheim/Assets/TAN.tres" id="18_c65rc"]
 [ext_resource type="Material" uid="uid://qw7ry24wpdn7" path="res://Turkheim/Assets/RED.tres" id="19_4bqgs"]
 [ext_resource type="Material" uid="uid://dpjxr4bxfsl6r" path="res://Turkheim/Assets/white.tres" id="20_kt36c"]
 [ext_resource type="Material" uid="uid://bsraq1kmxnhmk" path="res://Turkheim/Assets/BLACK.tres" id="21_u47gj"]
 [ext_resource type="Material" uid="uid://bksevc2l3a7y6" path="res://Turkheim/Assets/GREEN.tres" id="22_alfwd"]
 [ext_resource type="PackedScene" uid="uid://dpkp1e1qb3mxa" path="res://Turkheim/Scenes/cloud.tscn" id="24_tyy31"]
-[ext_resource type="Script" uid="uid://cxvydpqtjj50t" path="res://Turkheim/Scenes/sailor_saved.gd" id="25_pg8bd"]
+[ext_resource type="AudioStream" uid="uid://i3wmrh01j4iv" path="res://Turkheim/Assets/Sounds/Crank.wav" id="30_8jkjd"]
+[ext_resource type="PackedScene" uid="uid://dfhehmdlos4na" path="res://Turkheim/Scenes/sailor.tscn" id="33_8jkjd"]
+[ext_resource type="AudioStream" uid="uid://b024tlb8hqryr" path="res://Turkheim/Assets/Sounds/EnvironmentSound.wav" id="33_pqp5h"]
+[ext_resource type="PackedScene" uid="uid://bhc43sodyvdun" path="res://Turkheim/Scenes/beach.tscn" id="33_sf2p6"]
+[ext_resource type="AudioStream" uid="uid://bb2kdx0ibu585" path="res://Turkheim/Assets/Sounds/Mana Two - Part 2.mp3" id="35_8jkjd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_syy7o"]
 sky_top_color = Color(0.11584254, 0.38291943, 0.6134721, 1)
@@ -588,12 +595,17 @@ material = SubResource("StandardMaterial3D_iiosn")
 inner_radius = 0.2
 outer_radius = 0.4
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_am666"]
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_pqp5h"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_c65rc"]
-radius = 0.2
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4ks6"]
+albedo_color = Color(7.2196127e-07, 0, 0.39342433, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gvcwp"]
+material = SubResource("StandardMaterial3D_s4ks6")
+size = Vector2(2000, 2000)
 
 [node name="Level" type="Node3D" unique_id=453419329]
+script = ExtResource("1_alfwd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1241273643]
 environment = SubResource("Environment_eo64s")
@@ -605,35 +617,37 @@ shadow_enabled = true
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=90285023]
 transform = Transform3D(-0.85716736, -0.36418682, 0.36418682, 0, 0.70710677, 0.70710677, -0.51503795, 0.60610884, -0.60610884, 0, 0, 0)
 visible = false
-light_color = Color(0.76732427, 0.3200193, 0.44399935, 1)
+light_color = Color(0.600958, 0.45685768, 0.4096027, 1)
 light_energy = 1.475
 
 [node name="StartXR" parent="." unique_id=507082829 instance=ExtResource("1_2katk")]
 
-[node name="SeaTiles" parent="." unique_id=1538150692 instance=ExtResource("2_d06sr")]
+[node name="sea" type="Node3D" parent="." unique_id=761200631]
 
-[node name="SeaTiles2" parent="." unique_id=591945795 instance=ExtResource("2_d06sr")]
+[node name="SeaTiles" parent="sea" unique_id=1538150692 instance=ExtResource("2_d06sr")]
+
+[node name="SeaTiles2" parent="sea" unique_id=591945795 instance=ExtResource("2_d06sr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 600, 0, 0)
 
-[node name="SeaTiles3" parent="." unique_id=519411857 instance=ExtResource("2_d06sr")]
+[node name="SeaTiles3" parent="sea" unique_id=519411857 instance=ExtResource("2_d06sr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -600, 0, 0)
 
-[node name="SeaTiles4" parent="." unique_id=1802999338 instance=ExtResource("2_d06sr")]
+[node name="SeaTiles4" parent="sea" unique_id=1802999338 instance=ExtResource("2_d06sr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -600)
 
-[node name="SeaTiles5" parent="." unique_id=1683071979 instance=ExtResource("2_d06sr")]
+[node name="SeaTiles5" parent="sea" unique_id=1683071979 instance=ExtResource("2_d06sr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 600, 0, -600)
 
-[node name="SeaTiles6" parent="." unique_id=365797347 instance=ExtResource("2_d06sr")]
+[node name="SeaTiles6" parent="sea" unique_id=365797347 instance=ExtResource("2_d06sr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -600, 0, -600)
 
-[node name="SeaTiles7" parent="." unique_id=1716807605 instance=ExtResource("2_d06sr")]
+[node name="SeaTiles7" parent="sea" unique_id=1716807605 instance=ExtResource("2_d06sr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 600)
 
-[node name="SeaTiles8" parent="." unique_id=1585597578 instance=ExtResource("2_d06sr")]
+[node name="SeaTiles8" parent="sea" unique_id=1585597578 instance=ExtResource("2_d06sr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 600, 0, 600)
 
-[node name="SeaTiles9" parent="." unique_id=1785144648 instance=ExtResource("2_d06sr")]
+[node name="SeaTiles9" parent="sea" unique_id=1785144648 instance=ExtResource("2_d06sr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -600, 0, 600)
 
 [node name="Terrain3D" type="Terrain3D" parent="." unique_id=1958795463]
@@ -695,23 +709,32 @@ material_override = ExtResource("18_c65rc")
 mesh = SubResource("ArrayMesh_vltuk")
 skeleton = NodePath("")
 
+[node name="Burner" type="AudioStreamPlayer3D" parent="Balloon" unique_id=1406470585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6009731, 0)
+stream = ExtResource("15_u47gj")
+attenuation_model = 1
+volume_db = -80.0
+autoplay = true
+
 [node name="Hook" type="Node3D" parent="Balloon" unique_id=1124273761]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
-[node name="Area3D" type="Area3D" parent="Balloon/Hook" unique_id=1316143091]
+[node name="Hook" type="Area3D" parent="Balloon/Hook" unique_id=1316143091 groups=["hook"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.5000019, -0.74999994)
+collision_layer = 4
+collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Balloon/Hook/Area3D" unique_id=156950538]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Balloon/Hook/Hook" unique_id=156950538]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.67884827, 0)
 shape = SubResource("SphereShape3D_d06sr")
 
-[node name="Hook" type="MeshInstance3D" parent="Balloon/Hook/Area3D" unique_id=1006736812]
+[node name="Hook" type="MeshInstance3D" parent="Balloon/Hook/Hook" unique_id=1006736812]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6000004, 0)
 material_override = ExtResource("19_4bqgs")
 mesh = SubResource("ArrayMesh_4jcrs")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Balloon/Hook/Area3D/Hook" unique_id=1174668672]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Balloon/Hook/Hook/Hook" unique_id=1174668672]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1727581, 0)
 mesh = SubResource("SphereMesh_ei88c")
 
@@ -733,11 +756,21 @@ material_override = ExtResource("20_kt36c")
 mesh = SubResource("ArrayMesh_mgnly")
 skeleton = NodePath("")
 
+[node name="Props" type="AudioStreamPlayer3D" parent="Balloon/PropLeft" unique_id=1102514429]
+stream = ExtResource("18_alfwd")
+pitch_scale = 0.01
+autoplay = true
+
 [node name="PropRight" type="MeshInstance3D" parent="Balloon" unique_id=1088662741]
 transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, -1, 0.7499999, 0)
 material_override = ExtResource("20_kt36c")
 mesh = SubResource("ArrayMesh_mgnly")
 skeleton = NodePath("")
+
+[node name="Props2" type="AudioStreamPlayer3D" parent="Balloon/PropRight" unique_id=217022286]
+stream = ExtResource("18_alfwd")
+pitch_scale = 0.01
+autoplay = true
 
 [node name="PropBase" type="MeshInstance3D" parent="Balloon" unique_id=767390961]
 material_override = ExtResource("21_u47gj")
@@ -992,21 +1025,27 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 [node name="GrabPointRedirectRight" parent="Balloon/LeverOriginCrank/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1579195676 node_paths=PackedStringArray("target") instance=ExtResource("9_rdo44")]
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
+[node name="Crank" type="AudioStreamPlayer3D" parent="Balloon/LeverOriginCrank" unique_id=1024520278]
+stream = ExtResource("30_8jkjd")
+pitch_scale = 0.81
+
 [node name="Burner light" type="OmniLight3D" parent="Balloon" unique_id=1821658086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6995564, 0)
 light_color = Color(1, 0.58431375, 0.078431375, 1)
 light_energy = 0.5
 
 [node name="clouds" type="Node3D" parent="." unique_id=5437180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 37.463608, 0)
+visible = false
 
 [node name="cloud" parent="clouds" unique_id=1694105002 instance=ExtResource("24_tyy31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.256172, 58.91495, -23.858114)
 
 [node name="cloud2" parent="clouds" unique_id=841532725 instance=ExtResource("24_tyy31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.46142, 58.91495, 24.46285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.495094, 58.914948, 54.731117)
 
 [node name="cloud3" parent="clouds" unique_id=1835802692 instance=ExtResource("24_tyy31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.62528, 58.91495, -92.38369)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116.7281, 58.914948, -197.20761)
 
 [node name="cloud4" parent="clouds" unique_id=193404936 instance=ExtResource("24_tyy31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.42093, 58.91495, -73.96862)
@@ -1015,7 +1054,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.42093, 58.91495, -73.9686
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.929665, 58.91495, 84.559074)
 
 [node name="cloud6" parent="clouds" unique_id=206272542 instance=ExtResource("24_tyy31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.44706, 64.953125, 118.62487)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.44706, 64.953125, 192.7456)
 
 [node name="cloud7" parent="clouds" unique_id=1372874836 instance=ExtResource("24_tyy31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.22096, 64.953125, -100.404106)
@@ -1024,7 +1063,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.22096, 64.953125, -100.4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.09615, 64.953125, -209.55093)
 
 [node name="cloud9" parent="clouds" unique_id=11929162 instance=ExtResource("24_tyy31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.399483, 64.953125, -159.82115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.399483, 64.953125, -285.52466)
 
 [node name="cloud10" parent="clouds" unique_id=321092589 instance=ExtResource("24_tyy31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.23938, 64.953125, -228.61256)
@@ -1033,7 +1072,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.23938, 64.953125, -228.61
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 243.62628, 64.953125, -122.38329)
 
 [node name="cloud12" parent="clouds" unique_id=942993009 instance=ExtResource("24_tyy31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.86728, 64.953125, 52.889977)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.86728, 64.953125, 136.6261)
 
 [node name="cloud13" parent="clouds" unique_id=2011366643 instance=ExtResource("24_tyy31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.78104, 64.953125, 225.08798)
@@ -1057,25 +1096,116 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.253754, 64.953125, 245.264
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 50)
 mesh = SubResource("TorusMesh_rdo44")
 
-[node name="Sailor" type="Area3D" parent="Rubberring" unique_id=1776264667]
+[node name="Beach" parent="." unique_id=770581298 instance=ExtResource("33_sf2p6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.320175, 0.1, 57.556156)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rubberring/Sailor" unique_id=759139976]
-shape = SubResource("CapsuleShape3D_am666")
+[node name="CollisionShape3D" parent="Beach" index="0" unique_id=2141449272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9459076, 2.588253, -0.3491516)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Rubberring/Sailor" unique_id=881352509]
-mesh = SubResource("CapsuleMesh_c65rc")
+[node name="Beach5" parent="." unique_id=520783438 instance=ExtResource("33_sf2p6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.123062, 0.1, 52.29385)
 
-[node name="SailorSaved" type="CharacterBody3D" parent="Rubberring" unique_id=1518164736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.380947, 5.124027, 0)
-script = ExtResource("25_pg8bd")
+[node name="CollisionShape3D" parent="Beach5" index="0" unique_id=2141449272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.795784, 2.909916, -2.0547752)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Rubberring/SailorSaved" unique_id=1496066368]
-shape = SubResource("CapsuleShape3D_am666")
+[node name="Beach3" parent="." unique_id=38330755 instance=ExtResource("33_sf2p6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.63914, 0.1, -61.155563)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Rubberring/SailorSaved" unique_id=583099957]
-mesh = SubResource("CapsuleMesh_c65rc")
+[node name="CollisionShape3D" parent="Beach3" index="0" unique_id=2141449272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5152206, 2.909916, -0.06508255)
+
+[node name="Beach4" parent="." unique_id=1807781972 instance=ExtResource("33_sf2p6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -165.10301, 0.1, -36.948914)
+
+[node name="CollisionShape3D" parent="Beach4" index="0" unique_id=2141449272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5508118, 2.909916, -4.859001)
+
+[node name="Beach2" parent="." unique_id=1404393030 instance=ExtResource("33_sf2p6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.148, 0.1, 49.568)
+
+[node name="CollisionShape3D" parent="Beach2" index="0" unique_id=2141449272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89720917, 2.909916, -2.502552)
+
+[node name="Beach6" parent="." unique_id=256713408 instance=ExtResource("33_sf2p6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.371, 0.1, -82.684)
+
+[node name="CollisionShape3D" parent="Beach6" index="0" unique_id=2141449272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3650894, 2.909916, 10.653252)
+
+[node name="Sailor" parent="." unique_id=1120997567 instance=ExtResource("33_8jkjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 50)
+
+[node name="Sailor2" parent="." unique_id=982085684 instance=ExtResource("33_8jkjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.22748, 0.1, 68.69898)
+
+[node name="Rubberring2" type="MeshInstance3D" parent="Sailor2" unique_id=408851142]
+mesh = SubResource("TorusMesh_rdo44")
+skeleton = NodePath("../..")
+
+[node name="Sailor3" parent="." unique_id=261599602 instance=ExtResource("33_8jkjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.12625, 0.1, -97.81707)
+
+[node name="Rubberring3" type="MeshInstance3D" parent="Sailor3" unique_id=582942844]
+mesh = SubResource("TorusMesh_rdo44")
+skeleton = NodePath("../..")
+
+[node name="Sailor4" parent="." unique_id=629967044 instance=ExtResource("33_8jkjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.35101, 0.1, -58.570873)
+
+[node name="Rubberring5" type="MeshInstance3D" parent="Sailor4" unique_id=226517556]
+mesh = SubResource("TorusMesh_rdo44")
+skeleton = NodePath("../..")
+
+[node name="Sailor5" parent="." unique_id=664095329 instance=ExtResource("33_8jkjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -187.6338, 0.1, -42.311726)
+
+[node name="Rubberring4" type="MeshInstance3D" parent="Sailor5" unique_id=1310362809]
+mesh = SubResource("TorusMesh_rdo44")
+skeleton = NodePath("../..")
+
+[node name="Sailor6" parent="." unique_id=1272860979 instance=ExtResource("33_8jkjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.26627, 0.1, 83.83681)
+
+[node name="Rubberring6" type="MeshInstance3D" parent="Sailor6" unique_id=620792755]
+mesh = SubResource("TorusMesh_rdo44")
+skeleton = NodePath("../..")
+
+[node name="EnvironmentSound" type="AudioStreamPlayer" parent="." unique_id=483167889]
+stream = ExtResource("33_pqp5h")
+volume_db = -7.865
+pitch_scale = 0.55
+autoplay = true
+
+[node name="Sillysong" type="AudioStreamPlayer" parent="." unique_id=536860168]
+stream = ExtResource("35_8jkjd")
+volume_db = -17.424
+autoplay = true
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=833303625]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1691261140]
+shape = SubResource("WorldBoundaryShape3D_pqp5h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1574863330]
+visible = false
+mesh = SubResource("PlaneMesh_gvcwp")
 
 [connection signal="slider_moved" from="Balloon/SliderOrigin/InteractableSlider" to="Balloon" method="_on_interactable_slider_slider_moved"]
 [connection signal="hinge_moved" from="Balloon/LeverOriginRight/InteractableLever" to="Balloon" method="_on_interactable_lever_right_hinge_moved"]
 [connection signal="hinge_moved" from="Balloon/LeverOriginLeft/InteractableLever" to="Balloon" method="_on_interactable_lever_hinge_moved"]
 [connection signal="hinge_moved" from="Balloon/LeverOriginCrank/InteractableLever" to="Balloon" method="_on_interactable_winch_hinge_moved"]
+[connection signal="SailorSaved" from="Sailor" to="." method="sailor_saved"]
+[connection signal="SailorSaved" from="Sailor2" to="." method="sailor_saved"]
+[connection signal="SailorSaved" from="Sailor3" to="." method="sailor_saved"]
+[connection signal="SailorSaved" from="Sailor4" to="." method="sailor_saved"]
+[connection signal="SailorSaved" from="Sailor5" to="." method="sailor_saved"]
+[connection signal="SailorSaved" from="Sailor6" to="." method="sailor_saved"]
+
+[editable path="Beach"]
+[editable path="Beach5"]
+[editable path="Beach3"]
+[editable path="Beach4"]
+[editable path="Beach2"]
+[editable path="Beach6"]
