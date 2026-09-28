@@ -1,15 +1,18 @@
 extends Node3D
 
-var sailors = 0
-# Called when the node enters the scene tree for the first time.
+const WIN = preload("uid://c735m4qynf22u")
+
+var sailors: int = 0
+var is_changing_scene: bool = false
+
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if sailors == 6:
-		get_tree().reload_current_scene()
+	# Trigger win condition only once
+	if sailors >= 6 and not is_changing_scene:
+		is_changing_scene = true
+		get_tree().change_scene_to_packed(WIN)
 
 func sailor_saved() -> void:
-	sailors = sailors + 1
+	sailors += 1
